@@ -1,0 +1,45 @@
+{
+  "_comment": "answer는 1부터 시작하는 보기 번호. 샘플 5문제이며 2주차에 기말 범위 문제로 교체·추가한다.",
+  "questions": [
+    {
+      "id": "tcp-handshake-01",
+      "chapter": "전송 계층",
+      "question": "TCP 연결 설정(3-way handshake)에서 주고받는 세그먼트의 순서로 옳은 것은?",
+      "choices": ["SYN → ACK → FIN", "SYN → SYN+ACK → ACK", "SYN+ACK → SYN → ACK", "ACK → SYN → SYN+ACK"],
+      "answer": 2,
+      "explanation": "클라이언트가 SYN을 보내고, 서버가 SYN+ACK로 응답하며, 클라이언트가 ACK를 보내면 연결이 수립된다."
+    },
+    {
+      "id": "udp-01",
+      "chapter": "전송 계층",
+      "question": "UDP에 대한 설명으로 옳은 것은?",
+      "choices": ["연결 설정 후 데이터를 전송한다", "혼잡 제어를 제공한다", "연결 설정 없이 데이터그램 단위로 전송한다", "순서 보장과 재전송을 제공한다"],
+      "answer": 3,
+      "explanation": "UDP는 비연결형으로, 핸드셰이크·재전송·순서 보장·혼잡 제어 없이 데이터그램을 바로 보낸다."
+    },
+    {
+      "id": "tcp-cc-01",
+      "chapter": "전송 계층",
+      "question": "TCP 혼잡 제어의 slow start 단계에서 혼잡 윈도우(cwnd)는 어떻게 증가하는가?",
+      "choices": ["RTT마다 1 MSS씩 선형 증가", "RTT마다 약 두 배로 지수 증가", "변하지 않는다", "손실이 날 때마다 증가"],
+      "answer": 2,
+      "explanation": "slow start에서는 ACK 하나마다 cwnd를 1 MSS 늘리므로 RTT마다 약 두 배가 된다. ssthresh에 도달하면 혼잡 회피(선형 증가)로 바뀐다."
+    },
+    {
+      "id": "subnet-01",
+      "chapter": "네트워크 계층",
+      "question": "서브넷 마스크가 /26인 네트워크에서 호스트에 할당할 수 있는 주소의 개수는?",
+      "choices": ["30", "62", "64", "126"],
+      "answer": 2,
+      "explanation": "호스트 비트가 32-26=6비트이므로 2^6=64개이고, 네트워크 주소와 브로드캐스트 주소를 빼면 62개다."
+    },
+    {
+      "id": "arp-01",
+      "chapter": "링크 계층",
+      "question": "ARP의 역할로 옳은 것은?",
+      "choices": ["도메인 이름을 IP 주소로 변환", "IP 주소에 해당하는 MAC 주소를 알아냄", "IP 주소를 자동으로 할당", "패킷의 경로를 계산"],
+      "answer": 2,
+      "explanation": "ARP는 같은 링크 안에서 목적지 IP 주소에 대응하는 MAC 주소를 브로드캐스트 질의로 알아낸다. 1번은 DNS, 3번은 DHCP, 4번은 라우팅 프로토콜의 역할이다."
+    }
+  ]
+}
